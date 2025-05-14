@@ -1,0 +1,4 @@
+(aiplus
+  :fetcher github
+  :repo "bx-blee/aiplus"
+  :files ("*.el"))

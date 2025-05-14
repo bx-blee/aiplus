@@ -1,0 +1,74 @@
+#+title: AIPlus -- Blee enhancements to aidermacs and gptel.
+#+DATE: <2025-05-14 Wed 12:15>
+#+AUTHOR: Mohsen BANAN
+#+OPTIONS: toc:4
+
+
+~Blee Panel Controls~: [[elisp:(show-all)][Show-All]] | [[elisp:(org-shifttab)][Overview]] | [[elisp:(progn (org-shifttab) (org-content))][Content]] | [[elisp:(delete-other-windows)][(1)]] | [[elisp:(progn (save-buffer) (kill-buffer))][S&Q]] | [[elisp:(save-buffer)][Save]]  | [[elisp:(kill-buffer)][Quit]]  | [[elisp:(bury-buffer)][Bury]]  \\
+~Panel Links~:  [[file:../_nodeBase_/fullUsagePanel-en.org][Blee Panel]]
+
+* Overview
+AIPlus includes various Menus and Utilities for integration of aidermacs and gptel in Blee.
+Some of AIPlus can be used outside of Blee.
+
+* Table of Contents     :TOC:
+- [[#overview][Overview]]
+- [[#aiplus--installation][AIPlus  Installation]]
+  - [[#blee-installation][Blee Installation]]
+  - [[#straight-installation][Straight Installation]]
+- [[#blee-panels-and-documentation][Blee Panels and Documentation]]
+
+* AIPlus  Installation
+
+As with all blee packages, blee-installation and straight-installation information is provided.
+
+As always, blee-installation is verified and with straight-installation you are on your own.
+
+** Blee Installation
+
+#+BEGIN_EXAMPLE
+/bisos/blee/env3/libs/bnpa:aiplus.el
+#+END_EXAMPLE
+
+
+** Straight Installation
+
+#+BEGIN_SRC elisp :results silent
+(progn
+   (straight-use-package '(aiplus-mailing :type git :host github :repo "bx-blee/aiplus"))
+
+#+END_SRC
+
+
+* Blee Panels and Documentation
+
+Documentation of AIPLUS is in the form of a series of related panels. Primary AIPLUS Blee-Panel is
+[[file:./panels/aiplus/_nodeBase_/fullUsagePanel-en.org]].
+With some limitations, AIPLUS can be used as a stand alone Emacs package.
+
+
+
+
+# ###+BEGIN: blee:bxPanel:footerOrgParams
+#+STARTUP: overview
+#+STARTUP: lognotestate
+#+STARTUP: inlineimages
+#+SEQ_TODO: TODO WAITING DELEGATED | DONE DEFERRED CANCELLED
+#+TAGS: @desk(d) @home(h) @work(w) @withInternet(i) @road(r) call(c) errand(e)
+#+CATEGORY: N:aiplus-conceptAndDesign
+# ###+END
+# ###+BEGIN: blee:bxPanel:footerEmacsParams :primMode "org-mode"
+# Local Variables:
+# eval: (setq-local toc-org-max-depth 4)
+# eval: (setq-local ~selectedSubject "noSubject")
+# eval: (setq-local ~primaryMajorMode 'org-mode)
+# eval: (setq-local ~blee:panelUpdater nil)
+# eval: (setq-local ~blee:dblockEnabler nil)
+# eval: (setq-local ~blee:dblockController "interactive")
+# eval: (img-link-overlays)
+# eval: (set-fill-column 115)
+# eval: (blee:fill-column-indicator/enable)
+# eval: (bx:load-file:ifOneExists "./panelActions.el")
+# End:
+
+# ###+END
