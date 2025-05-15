@@ -7,6 +7,9 @@
 (require 'gptel)   ;; Ensure gptel functions are available
 (require 'subr-x)  ;; For using string manipulation functions like string-trim
 
+(require 'compile-time-function-name)
+(require 'b:aiplus::gptel:canned:menu)
+
 ;; (b:aiplus:gptel:menu:plugin|install modes:menu:global (s-- 6))
 (defun b:aiplus:gptel:menu:plugin|install (<menuLabel <menuDelimiter)
   "Adds this as a submenu to menu labeled <menuLabel at specified delimited <menuDelimiter."
@@ -46,7 +49,7 @@ As such what happens below should be exactly what is necessary and no more."
       nil
       (format "Gptel Menu")
       `(
-	,(format "Gptel Menu")
+	,(format "AI-Plus :: Gptel Menu")
 	:help "gptel menu"
 	:active ,<active
 	:visible t
@@ -58,26 +61,33 @@ As such what happens below should be exactly what is necessary and no more."
 	,(s-- 8)
 	))
 
+   (b:aiplus:gptel:canned:menu:plugin|install
+     b:aiplus:gptel:menu (s-- 3))
+
+   (b:aiplus:gptel:translate:menu:plugin|install
+     b:aiplus:gptel:menu (s-- 3))
+
+    
     (dolist (item '(b:aiplus:gptel:menuItem:gptel|define
                     b:aiplus:gptel:menuItem:gptel-send|define
                     b:aiplus:gptel:menuItem:gptel-rewrite|define))
       (easy-menu-add-item
        b:aiplus:gptel:menu nil
        (funcall item)
-       (s-- 3)))
+       (s-- 4)))
 
    (dolist (item '(b:aiplus:gptel:menuItem:gptel-menu|define))
       (easy-menu-add-item
        b:aiplus:gptel:menu nil
        (funcall item)
-       (s-- 4)))
+       (s-- 5)))
 
    (dolist (item '(b:aiplus:gptel:menuItem:gptel-add|define
                     b:aiplus:gptel:menuItem:gptel-add-file|define))
       (easy-menu-add-item
        b:aiplus:gptel:menu nil
        (funcall item)
-       (s-- 5)))
+       (s-- 6)))
 
 
    (dolist (item '(b:aiplus:gptel:menuItem:gptel-org-set-topic|define
@@ -85,12 +95,13 @@ As such what happens below should be exactly what is necessary and no more."
       (easy-menu-add-item
        b:aiplus:gptel:menu nil
        (funcall item)
-       (s-- 6)))
+       (s-- 7)))
 
    (easy-menu-add-item
     b:aiplus:gptel:menu nil
     (b:aiplus:gptel:menuItem:gptel-quick|define)
     (s-- 7))
+
 
    (easy-menu-add-item
     b:aiplus:gptel:menu nil

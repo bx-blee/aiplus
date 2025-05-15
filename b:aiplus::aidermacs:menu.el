@@ -3,7 +3,7 @@
 ;;;
 
 (require 'easymenu)
-(require 'b:menu)
+(require 'b:menu::panelAndHelp)
 
 ;; (b:aiplus:aidermacs:menu:plugin|install modes:menu:global (s-- 6))
 (defun b:aiplus:aidermacs:menu:plugin|install (<menuLabel <menuDelimiter)
@@ -44,7 +44,7 @@ As such what happens below should be exactly what is necessary and no more."
       nil
       (format "Aidermacs Menu")
       `(
-	,(format "Aidermacs Menu")
+	,(format "AI-Plus :: Aidermacs Menu")
 	:help "aidermacs menu"
 	:active ,<active
 	:visible t
@@ -83,4 +83,4 @@ As such what happens below should be exactly what is necessary and no more."
           ]
          )))
 
-(provide 'b:aiplus:aidermacs:menu)
+(provide 'b:aiplus::aidermacs:menu)

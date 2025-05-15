@@ -8,8 +8,64 @@
 ~Panel Links~:  [[file:../_nodeBase_/fullUsagePanel-en.org][Blee Panel]]
 
 * Overview
-AIPlus includes various Menus and Utilities for integration of aidermacs and gptel in Blee.
-Some of AIPlus can be used outside of Blee.
+
+Emacs, Itself: the Ultimate AI Assistant
+
+As of mid-2025, integrating AI into everyday environments is a universal trend.
+Microsoft has embedded Copilot into Windows and Microsoft 365 apps.
+Google offers Gemini and "Google Assistant" for AI integration in Android and Google Apps.
+Apple, too, has Siri and "Apple Intelligence."
+In the proprietary American digital ecosystems, these profit-driven companies dictate
+the terms, and consumers accept what is provided.
+
+In contrast, the Libre-Halaal ByStar Digital Ecosystem (https://github.com/mohsenBanan)
+offers a different approach. Our usage environment, Blee (https://github.com/bx-blee),
+is rooted in Emacs.
+
+The integration of Artificial Intelligence in Emacs is particularly powerful.
+
+Emacs, a 40+ year-old omni-context, editor-centered usage environment,
+supports AI capabilities across all work contexts. Whether it's software
+development (in any programming language), content creation and publishing
+(such as LaTeX), sophisticated email management (like Gnus), or task and time
+management (using org-mode), Emacs has it covered.
+
+Each of these activities can now benefit from a unified and consistent
+AI-assistant model. The ease with which AI has been integrated into Emacs is
+a testament to its core philosophy (conviviality of tools) and practical
+flexibility. Emacs' AI integration can be tailored to your preferences,
+allowing you to choose your preferred local (self-hosted) or remote AI
+engine. While many options are available, setting up a cohesive system
+requires some integration effort on your part. And, that is not always easy.
+
+With Blee and BISOS (ByStar Internet Services OS) --
+https://github.com/bisos), we have achieved this integration by incorporating
+two key Emacs AI interface packages:
+
+1) **gptel** - [GitHub](https://github.com/karthink/gptel): This package offers
+   a simple Large Language Model chat client for Emacs, supporting multiple
+   models and backends. It maintains the Emacs spirit by being accessible at
+   any time within any buffer.
+
+2) **aidermacs** - [GitHub](https://github.com/MatthewZMD/aidermacs): Designed
+   for AI pair programming in Emacs, Aidermacs integrates Aider—an
+   open-source AI pair programming tool—into Emacs. It surpasses other
+   integrations, like Cursor, through its seamless incorporation.
+
+Think of gptel as a versatile, omnipresent chatbox and aidermacs as a
+multilingual AI coding assistant. Installing these is straightforward, and
+with Blee, they come fully integrated for efficient AI-enhanced workflows.
+
+We have augmented these with an additional package called AIPlus
+(https://github.com/bx-blee/aiplus). AIPlus includes various menus and
+utilities for integrating aidermacs and gptel in Emacs and Blee.
+
+In the proprietary American model, the integration of AI into usage
+environments has accelerated surveillance capitalism and that trend will
+continue. In the Libre-Halaal model (https://github.com/bxplpc/120033), with
+the integration of AI into Emacs, we aim to preserve autonomy and control.
+
+I'll continue using Emacs. Your call!
 
 * Table of Contents     :TOC:
 - [[#overview][Overview]]
@@ -24,20 +80,24 @@ As with all blee packages, blee-installation and straight-installation informati
 
 As always, blee-installation is verified and with straight-installation you are on your own.
 
+
 ** Blee Installation
 
-#+BEGIN_EXAMPLE
-/bisos/blee/env3/libs/bnpa:aiplus.el
-#+END_EXAMPLE
-
+#+begin_src
+    (b:pkg:straight|profiledInstall
+       b:pkgsProfile:native
+     '(chatGptInv :type git :host github :repo "bx-blee/aiplus"))))
+#+end_src
 
 ** Straight Installation
 
-#+BEGIN_SRC elisp :results silent
-(progn
-   (straight-use-package '(aiplus-mailing :type git :host github :repo "bx-blee/aiplus"))
+#+begin_src
+(use-package chatGptInv
+  :straight (:host github :repo "bx-blee/aiplus"))
+#+end_src
 
-#+END_SRC
+But, I have not tested it. It may not work.
+
 
 
 * Blee Panels and Documentation
