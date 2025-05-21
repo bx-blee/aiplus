@@ -52,13 +52,13 @@
       nil
       "Global Menu For GPTEL related facilities."
       `("AI-Plus :: GPTEL Canned Prompts on Region Menu"
-	:help "Invoke ChatGpt Commands and Show And Set CHATGPT Related Parameters"
+	:help "Invoke GPTEL on region with prompt"
 	,(s-- 3)
 	,(s-- 4)
         [
-	 "GPTEL Canned Prompt: Prompt"
-	 (call-interactively 'chatgpt-prompt)
-         :help "Query OpenAI with PROMPT calling the CALLBACK function on the resulting buffer."
+	 "GPTEL Canned Prompt: Prompt (text)"
+	 (call-interactively 'b:aiplus:gptel:canned:region/Prompt)
+         :help "Put prompt in GPTEL buffer."
 	 ]
 	 [
 	  "GPTEL Canned Prompt: Define Region (text)"
@@ -66,9 +66,9 @@
 	  :help "asks GPTEL Canned Prompt: to Define the region."
 	  ]
 	 [
-	  "GPTEL Canned Prompt: Rewrite Region (text)"
-	  (call-interactively 'b:aiplus:gptel:canned:region/Rewrite)
-	  :help "asks GPTEL Canned Prompt: to rewrite the region."
+	  "GPTEL Canned Prompt: Spell Check Region (text)"
+	  (call-interactively 'b:aiplus:gptel:canned:region/SpellCheck)
+	  :help "asks GPTEL Canned Prompt: Spell Check the region."
 	  ]
 	 [
 	  "GPTEL Canned Prompt: Proofread Region (text)"
@@ -78,6 +78,11 @@
 	 [
 	  "GPTEL Canned Prompt: Grammar Check Region (text)"
 	  (call-interactively 'b:aiplus:gptel:canned:region/GrammarCheck)
+	  :help "asks GPTEL Canned Prompt: to rewrite the region."
+	  ]
+	 [
+	  "GPTEL Canned Prompt: Rewrite Region (text)"
+	  (call-interactively 'b:aiplus:gptel:canned:region/Rewrite)
 	  :help "asks GPTEL Canned Prompt: to rewrite the region."
 	  ]
 	 [

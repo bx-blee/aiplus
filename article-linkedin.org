@@ -21,8 +21,8 @@ AI integration in Emacs is particularly powerful.
 Emacs, a 40+ year-old omni-context, editor-centered environment,
 supports AI across all work contexts. Whether it's software
 development (in any language), content creation and publishing
-(such as LaTeX), sophisticated email management (like Gnus), or task and time
-management (using org-mode), Emacs covers it all.
+(such as LaTeX), sophisticated email management (like Gnus), or task
+and time management (using org-mode), Emacs covers it all.
 
 These activities now benefit from a unified AI-assistant model.
 The ease of AI integration into Emacs is a testament to its core philosophy

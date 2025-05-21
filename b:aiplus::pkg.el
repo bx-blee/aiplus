@@ -1,8 +1,10 @@
 ;;; b:aiplus::pkg.el --- AI Plus Blee Package  -*- lexical-binding: t -*-
 
+
+(require 'b:aiplus::gptel:canned)
 (require 'b:aiplus::gptel:menu)
 (require 'b:aiplus::aidermacs:menu)
-(require 'b:aiplus::gptel:canned)
+(require 'b:aiplus::aidermacs:minor:menu)
 
 (defgroup b:aiplus:: nil
   "AIPlus Package."

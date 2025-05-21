@@ -17,73 +17,98 @@
   "Give a short definition of this word or phrase. Then, provide 3 usage examples, synonyms and antyonyms also translate to farsi and french"
   )
 
-(defvar chatgpt-buffer "*ChatGPT*"
+(defvar chatgpt-buffer "*AIPlus-Transcript*"
   "Title of the buffer used to store the results of an OpenAI API query.")
 
-(defun b:aiplus/gptel ()
-  (interactive)
-  (gptel chatgpt-buffer)
+
+(defmacro chatgpt-show-results-buffer-if-active ()
+  "Show the results in other window if necessary."
+  `(if (and (not ;; visible
+             (get-buffer-window chatgpt-buffer))
+	    (called-interactively-p 'interactive))
+       (lambda (&optional buf) (ignore buf)
+         (with-current-buffer buf
+           (save-excursion (fill-region (point-min) (point-max)))
+           (view-mode t))
+         (switch-to-buffer-other-window chatgpt-buffer))
+     #'identity))
+
+
+(defun display-buffer-and-recenter (buffer)
+  "Display BUFFER, move point to end, and recenter the buffer's window."
+  (let ((win (display-buffer buffer)))
+    (when (window-live-p win)
+      (with-selected-window win
+        (with-current-buffer buffer
+          (goto-char (point-max))
+          (recenter))))))
+
+
+(defun b:aiplus:gptel:canned|responseProcess (buffer prompt response)
+  "Store a response in a well known buffer we can look at if we want"
+  (let ((buffer (get-buffer-create buffer)))
+    (with-current-buffer buffer
+      ;;(erase-buffer)
+
+      (goto-char (point-max))
+      (insert "\n\n==================\n\n")
+      (insert prompt)
+      (insert "\n\n-->\n\n")
+      (insert response)
+      (goto-char (point-max))
+      )
+    (chatgpt-show-results-buffer-if-active)
+    (display-buffer-and-recenter buffer)
+    )
   )
 
+(defun b:aiplus:gptel:canned:region/withPrompt%% (<start <end <prompt)
+  "Use ChatGPT to define the current word of the region."
+  (interactive "r")
+  (unless (region-active-p)
+    (error "you must have a region set"))
+  (let ((input (buffer-substring-no-properties <start <end)))
+    (gptel-request nil
+      :callback (lambda (response info)
+                  (b:aiplus:gptel:canned|responseProcess chatgpt-buffer (plist-get info :context) response)
+                  ;;(message response)
+                  )
+      :system <prompt
+      :context input)))
 
-(cl-defun b:aiplus:gptel:canned:region/withPrompt (
-                                                   <start
-                                                <end
-                                                <prompt
-                                                &key
-                                                (dontSend nil)
-                                                )
+(defun b:aiplus:gptel:canned:region/withPrompt (<start <end <prompt)
   "Use ChatGPT to define the current word of the region."
   (interactive "r")
   (unless (region-active-p)
     (error "you must have a region set"))
 
-  (let (($input (buffer-substring-no-properties <start <end))
-        ($buffer (get-buffer chatgpt-buffer))
-        ($gptWin (get-buffer-window chatgpt-buffer 'visible))
-        ($here)
+  (let ((input (buffer-substring-no-properties <start <end))
+        (buffer (get-buffer-create "*ChatGPT*"))
         )
-    (unless $buffer
-      (call-interactively 'b:aiplus/gptel))
-    (unless $gptWin
-      (display-buffer chatgpt-buffer))
-    (with-selected-window $gptWin
-      (with-current-buffer $buffer
-        (unless dontSend
-          (goto-char (point-max))
-          (insert <prompt)
-          (insert ":")
-          (insert $input)
-          (goto-char (point-max))
-          (gptel-send)
-          (goto-char (point-max))
-          (recenter)
-          )
-        (when dontSend
-          (setq $here (point-max))
-          (goto-char $here)
-          (insert $input)
-          (goto-char $here)
-          (recenter)
-          )
-        ))
-   ))
+    (with-current-buffer buffer
+      (goto-char (point-max))
+      (insert <prompt)
+      (insert ":")
+      (insert input)
+      (goto-char (point-max))
+      (gptel-send)
+      )
+    ;;(chatgpt-show-results-buffer-if-active)
+    (display-buffer-and-recenter buffer)
+    ))
 
-(defun b:aiplus:gptel:canned:region/Prompt (<start <end)
-  "Put prompt in GPTEL buffer."
-  (interactive "r")
-  (b:aiplus:gptel:canned:region/withPrompt <start <end nil :dontSend t))
 
 (defun b:aiplus:gptel:canned:region/Define (<start <end)
   "Use ChatGPT to define the current word of the region."
   (interactive "r")
   (b:aiplus:gptel:canned:region/withPrompt <start <end b:aiplus:gptel:prompt:wordDefine))
 
-(defun b:aiplus:gptel:canned:region/SpellCheck (<start <end)
+(defun b:aiplus:gptel:canned:region/Rewrite (<start <end)
   "Takes a region BEG to END asks ChatGPT to rewrite the region.
 The answer in the displays in `chatgpt-buffer'."
   (interactive "r")
-  (b:aiplus:gptel:canned:region/withPrompt <start <end "Spell check only, don't change otherwise, enumerate mistakes"))
+  (b:aiplus:gptel:canned:region/withPrompt <start <end "Rewrite"))
+
 
 (defun b:aiplus:gptel:canned:region/GrammarCheck (<start <end)
   "Takes a region BEG to END asks ChatGPT to Grammar Check the region.
@@ -96,13 +121,6 @@ The answer in the displays in `chatgpt-buffer'."
 The answer in the displays in `chatgpt-buffer'."
   (interactive "r")
   (b:aiplus:gptel:canned:region/withPrompt <start <end "proofread:"))
-
-(defun b:aiplus:gptel:canned:region/Rewrite (<start <end)
-  "Takes a region BEG to END asks ChatGPT to rewrite the region.
-The answer in the displays in `chatgpt-buffer'."
-  (interactive "r")
-  (b:aiplus:gptel:canned:region/withPrompt <start <end "Rewrite"))
-
 
 (defun b:aiplus:gptel:canned:region/CodeFix (<start <end)
   "Takes a region BEG to END asks ChatGPT to explain whats wrong with it.

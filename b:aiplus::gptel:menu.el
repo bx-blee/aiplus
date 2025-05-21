@@ -61,6 +61,11 @@ As such what happens below should be exactly what is necessary and no more."
 	,(s-- 8)
 	))
 
+    (easy-menu-add-item
+     b:aiplus:gptel:menu nil
+     (b:aiplus:gptel:menuItem:gptel|define)
+       (s-- 3))
+
    (b:aiplus:gptel:canned:menu:plugin|install
      b:aiplus:gptel:menu (s-- 3))
 
@@ -68,7 +73,7 @@ As such what happens below should be exactly what is necessary and no more."
      b:aiplus:gptel:menu (s-- 3))
 
     
-    (dolist (item '(b:aiplus:gptel:menuItem:gptel|define
+    (dolist (item '(;;; b:aiplus:gptel:menuItem:gptel|define
                     b:aiplus:gptel:menuItem:gptel-send|define
                     b:aiplus:gptel:menuItem:gptel-rewrite|define))
       (easy-menu-add-item
@@ -115,10 +120,24 @@ As such what happens below should be exactly what is necessary and no more."
     'b:aiplus:gptel:menu
     ))
 
+(defun b:aiplus/gptel ()
+  (interactive)
+  (let* ((chatgpt-buffer "*ChatGPT*")
+         ($buffer (get-buffer chatgpt-buffer))
+         ($gptWin (get-buffer-window chatgpt-buffer 'visible))
+        )
+    (unless $buffer
+      (gptel chatgpt-buffer)
+      (display-buffer chatgpt-buffer)
+      )
+    (unless $gptWin
+      (display-buffer chatgpt-buffer))
+  ))
+
 (defun b:aiplus:gptel:menuItem:gptel|define ()
   (car `(
-    [,(format "gptel  -- Create Dedicate Chat Buffer Send Query (with C-c En)")
-     (gptel)
+    [,(format "gptel  -- Create Dedicate Chat Buffer Send Query (with C-c Enter)")
+     (call-interactively 'b:aiplus/gptel)
      :help "Create a new dedicated chat buffer. Not required to use gptel."
      ]
     )))
@@ -157,11 +176,11 @@ As such what happens below should be exactly what is necessary and no more."
 
 (defun b:aiplus:gptel:menuItem:gptel-add-file|define ()
   (car `(
-    [,(format "gptel-add-file  -- Add File to Context")
-     (gptel-add-file)
-     :help "Add a file (text or supported media type) to gptel's context. Also available from the transient menu."
-     ]
-    )))
+         [,(format "gptel-add-file  -- Add File to Context")
+          (gptel-add-file)
+          :help "Add a file (text or supported media type) to gptel's context. Also available from the transient menu."
+          ]
+         )))
 
 (defun b:aiplus:gptel:menuItem:gptel-org-set-topic|define ()
   (car `(
