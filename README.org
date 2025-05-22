@@ -31,12 +31,12 @@ development (in any programming language), content creation and publishing
 management (using org-mode), Emacs has it covered.
 
 Each of these activities can now benefit from a unified and consistent
-AI-assistant model. The ease with which AI has been integrated into Emacs is
-a testament to its core philosophy (conviviality of tools) and practical
-flexibility. Emacs' AI integration can be tailored to your preferences,
-allowing you to choose your preferred local (self-hosted) or remote AI
-engine. While many options are available, setting up a cohesive system
-requires some integration effort on your part. And, that is not always easy.
+AI-assistant model.
+The ease of AI integration into Emacs is a testament to its core philosophy
+(conviviality of tools) and flexibility. Emacs' AI integration can be tailored
+to your preferences, allowing you to choose local (self-hosted) or remote AI
+engines. While many options exist, setting up a cohesive system
+requires some integration effort. And, that is not always easy.
 
 With Blee and BISOS (ByStar Internet Services OS) --
 https://github.com/bisos), we have achieved this integration by incorporating
@@ -56,16 +56,30 @@ Think of gptel as a versatile, omnipresent chatbox and aidermacs as a
 multilingual AI coding assistant. Installing these is straightforward, and
 with Blee, they come fully integrated for efficient AI-enhanced workflows.
 
+With Blee, installation and configuration of gptel is using:
+https://github.com/bx-blee/env3/blob/main/plus/bcpg%3AgptelPlus.el
+file:/bisos/blee/env3/plus/bcpg:gptelPlus.el
+
+With Blee, installation and configuration of aidermacs is using:
+https://github.com/bx-blee/env3/blob/main/plus/bcpg%3AaidermacsPlus.el
+file:/bisos/blee/env3/plus/bcpg:aidermacsPlus.el
+
+
 We have augmented these with an additional package called AIPlus
 (https://github.com/bx-blee/aiplus). AIPlus includes various menus and
 utilities for integrating aidermacs and gptel in Emacs and Blee.
+
+Installation and configuration of aidermacs is using:
+https://github.com/bx-blee/env3/blob/main/plus/bnpa%3Aaiplus.el
+file:/bisos/blee/env3/plus/bnpa:aiplus.el
 
 In the proprietary American model, the integration of AI into usage
 environments has accelerated surveillance capitalism and that trend will
 continue. In the Libre-Halaal model (https://github.com/bxplpc/120033), with
 the integration of AI into Emacs, we aim to preserve autonomy and control.
 
-I'll continue using Emacs. Your call!
+I'll continue using Emacs.
+Your call!
 
 * Table of Contents     :TOC:
 - [[#overview][Overview]]
@@ -86,18 +100,21 @@ As always, blee-installation is verified and with straight-installation you are 
 #+begin_src
     (b:pkg:straight|profiledInstall
        b:pkgsProfile:native
-     '(chatGptInv :type git :host github :repo "bx-blee/aiplus"))))
+     '(aiplus :type git :host github :repo "bx-blee/aiplus"))))
 #+end_src
+
+Or better yet, through:
+file:/bisos/blee/env3/plus/bnpa:aiplus.el
+
 
 ** Straight Installation
 
 #+begin_src
-(use-package chatGptInv
+(use-package aiplus
   :straight (:host github :repo "bx-blee/aiplus"))
 #+end_src
 
 But, I have not tested it. It may not work.
-
 
 
 * Blee Panels and Documentation
