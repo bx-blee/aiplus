@@ -42,12 +42,12 @@ With Blee and BISOS (ByStar Internet Services OS) --
 https://github.com/bisos), we have achieved this integration by incorporating
 two key Emacs AI interface packages:
 
-1) **gptel** - [GitHub](https://github.com/karthink/gptel): This package offers
+1) *gptel* - [GitHub](https://github.com/karthink/gptel): This package offers
    a simple Large Language Model chat client for Emacs, supporting multiple
    models and backends. It maintains the Emacs spirit by being accessible at
    any time within any buffer.
 
-2) **aidermacs** - [GitHub](https://github.com/MatthewZMD/aidermacs): Designed
+2) *aidermacs* - [GitHub](https://github.com/MatthewZMD/aidermacs): Designed
    for AI pair programming in Emacs, Aidermacs integrates Aider—an
    open-source AI pair programming tool—into Emacs. It surpasses other
    integrations, like Cursor, through its seamless incorporation.
@@ -58,11 +58,11 @@ with Blee, they come fully integrated for efficient AI-enhanced workflows.
 
 With Blee, installation and configuration of gptel is using:
 https://github.com/bx-blee/env3/blob/main/plus/bcpg%3AgptelPlus.el
-file:/bisos/blee/env3/plus/bcpg:gptelPlus.el
+[[file:/bisos/blee/env3/plus/bcpg:gptelPlus.el]]
 
 With Blee, installation and configuration of aidermacs is using:
 https://github.com/bx-blee/env3/blob/main/plus/bcpg%3AaidermacsPlus.el
-file:/bisos/blee/env3/plus/bcpg:aidermacsPlus.el
+[[file:/bisos/blee/env3/plus/bcpg:aidermacsPlus.el]]
 
 
 We have augmented these with an additional package called AIPlus
@@ -71,7 +71,7 @@ utilities for integrating aidermacs and gptel in Emacs and Blee.
 
 Installation and configuration of aidermacs is using:
 https://github.com/bx-blee/env3/blob/main/plus/bnpa%3Aaiplus.el
-file:/bisos/blee/env3/plus/bnpa:aiplus.el
+[[file:/bisos/blee/env3/plus/bnpa:aiplus.el]]
 
 In the proprietary American model, the integration of AI into usage
 environments has accelerated surveillance capitalism and that trend will
@@ -104,7 +104,7 @@ As always, blee-installation is verified and with straight-installation you are 
 #+end_src
 
 Or better yet, through:
-file:/bisos/blee/env3/plus/bnpa:aiplus.el
+[[file:/bisos/blee/env3/plus/bnpa:aiplus.el]]
 
 
 ** Straight Installation
