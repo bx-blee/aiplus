@@ -1,6 +1,6 @@
 ;;;-*- mode: Emacs-Lisp; lexical-binding: t ; -*-
 ;;;
-;;; Author: Mohsen BANAN --- 2023 --- Part Of Blee
+;;; Author: Mohsen BANAN --- 2025 --- Part Of Blee
 
 (require 'easymenu)
 (require 's)

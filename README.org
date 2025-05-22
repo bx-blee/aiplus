@@ -7,6 +7,9 @@
 ~Blee Panel Controls~: [[elisp:(show-all)][Show-All]] | [[elisp:(org-shifttab)][Overview]] | [[elisp:(progn (org-shifttab) (org-content))][Content]] | [[elisp:(delete-other-windows)][(1)]] | [[elisp:(progn (save-buffer) (kill-buffer))][S&Q]] | [[elisp:(save-buffer)][Save]]  | [[elisp:(kill-buffer)][Quit]]  | [[elisp:(bury-buffer)][Bury]]  \\
 ~Panel Links~:  [[file:../_nodeBase_/fullUsagePanel-en.org][Blee Panel]]
 
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/R2AkHl0GS5U/0.jpg)](https://www.youtube.com/watch?v=R2AkHl0GS5U)
+
+
 * Overview
 
 Emacs, Itself: the Ultimate AI Assistant

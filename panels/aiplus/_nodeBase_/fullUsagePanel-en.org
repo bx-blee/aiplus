@@ -44,12 +44,8 @@
 * [[elisp:(show-all)][(>]]  _[[elisp:(blee:menu-sel:outline:popupMenu)][±]]_  _[[elisp:(blee:menu-sel:navigation:popupMenu)][Ξ]]_       [[elisp:(outline-show-subtree+toggle)][| *AIPlus Evolution -- TODOs and Plans:* |]]    [[elisp:(org-shifttab)][<)]] E|
 ####+END
 ** +
-** TODO In b:aiplus:gptel:canned:region/withPrompt -- prior to gptel-request Bring up *AIPlus-Transcript*
-** TODO Date tag, capture prompt and region
-** TODO Upon response, date tag the region again.
-** TODO Rename chatgpt-buffer to aiPlusTranscript buffer
-** TODO Add spell check only. Add to menus.
-** TODO Announce in gptel and aidermacs.
+** DONE In b:aiplus:gptel:canned:region/withPrompt -- prior to gptel-request Bring up *AIPlus-Transcript*
+** WAITING Announce in gptel and aidermacs.
 ** B|
 ####+BEGIN: blee:bxPanel:separator :outLevel 1
 * /[[elisp:(beginning-of-buffer)][|^]] [[elisp:(blee:menu-sel:navigation:popupMenu)][==]] [[elisp:(delete-other-windows)][|1]]/
