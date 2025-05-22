@@ -25,11 +25,10 @@
 ####+BEGIN: blee:bxPanel:terseTreeNavigator :panelsList "bxPanel"
 * [[elisp:(show-all)][(>]] [[elisp:(describe-function 'org-dblock-write:blee:bxPanel:terseTreeNavigator)][dbf]]
 * +
-*   =Decedents=  :: [[elisp:(blee:bnsm:panel-goto "/bisos/git/bxRepos/blee/AIPlus/panels/aiplus/README")][README]] *|*
+*   =Decedents=  :: [[elisp:(blee:bnsm:panel-goto "/bisos/panels/blee-core/AI/aiplus/README")][README]] *|*
 *                                        *━━━━━━━━━━━━━━━━━━━━━━━━*
-*   *Siblings*   :: [[elisp:(blee:bnsm:panel-goto "/bisos/git/bxRepos/blee/AIPlus/panels/aiplus/_nodeBase_")][ =aiplus= ]] *|*
-*   /Ancestors/  :: [[elisp:(dired "//bisos/git/bxRepos/blee/AIPlus/panels")][ ~panels~ ]] *|* [[elisp:(dired "//bisos/git/bxRepos/blee/AIPlus")][ ~AIPlus~ ]] *|* [[elisp:(blee:bnsm:panel-goto "//bisos/git/bxRepos/blee/_nodeBase_")][ =blee= ]] *|* [[elisp:(blee:bnsm:panel-goto "//bisos/git/bxRepos/_nodeBase_")][ = /<bxRepos>/ = ]] *|* [[elisp:(dired "//bisos/git")][ ~git~ ]] *|*
-*   /Ancestors/  :: [[elisp:(dired "//bisos")][ ~bisos~ ]] *|*
+*   *Siblings*   :: [[elisp:(blee:bnsm:panel-goto "/bisos/panels/blee-core/AI/BISOS-AI/_nodeBase_")][ = /<BISOS-AI>/ = ]] *|* [[elisp:(blee:bnsm:panel-goto "/bisos/panels/blee-core/AI/aidermacs/_nodeBase_")][ =aidermacs= ]] *|* [[elisp:(blee:bnsm:panel-goto "/bisos/panels/blee-core/AI/aiplus/_nodeBase_")][ = /<aiplus>/ = ]] *|* [[elisp:(blee:bnsm:panel-goto "/bisos/panels/blee-core/AI/gptel/_nodeBase_")][ =gptel= ]] *|*
+*   /Ancestors/  :: [[elisp:(blee:bnsm:panel-goto "//bisos/panels/blee-core/AI/_nodeBase_")][ =AI= ]] *|* [[elisp:(blee:bnsm:panel-goto "//bisos/panels/blee-core/_nodeBase_")][ =blee-core= ]] *|* [[elisp:(blee:bnsm:panel-goto "//bisos/panels/_nodeBase_")][ = /<panels>/ = ]] *|* [[elisp:(dired "//bisos")][ ~bisos~ ]] *|*
 *                                   _━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━_                          [[elisp:(org-shifttab)][<)]] E|
 ####+END
 ####+BEGIN: blee:bxPanel:foldingSection :outLevel 1 :title "Overview and Roadmap" :anchor "Panel"

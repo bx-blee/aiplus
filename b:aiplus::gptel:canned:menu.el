@@ -125,9 +125,9 @@
     (easy-menu-add-item
       b:aiplus:gptel:canned:menu:select nil
      (b:menu:panelAndHelp|define
-      :panelName "/bisos/panels/blee-core/AI/gptel/_nodeBase_"
+      :panelName "/bisos/panels/blee-core/AI/aiplus/_nodeBase_"
       :funcName $thisFuncName
-      :pkgRepoUrl "https://github.com/karthink/gptel"
+      :pkgRepoUrl "https://github.com/bx-blee/aiplus"
       )
      (s-- 8))
     
