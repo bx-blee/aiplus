@@ -56,12 +56,12 @@ Think of gptel as a versatile, omnipresent chatbox and aidermacs as a
 multilingual AI coding assistant. Installing these is straightforward, and
 with Blee, they come fully integrated for efficient AI-enhanced workflows.
 
-With Blee, installation and configuration of gptel is using:\
-https://github.com/bx-blee/env3/blob/main/plus/bcpg%3AgptelPlus.el\
+With Blee, installation and configuration of gptel is using:\\
+https://github.com/bx-blee/env3/blob/main/plus/bcpg%3AgptelPlus.el
 and [[file:/bisos/blee/env3/plus/bcpg:gptelPlus.el]]
 
-With Blee, installation and configuration of aidermacs is using:\
-https://github.com/bx-blee/env3/blob/main/plus/bcpg%3AaidermacsPlus.el\
+With Blee, installation and configuration of aidermacs is using:\\
+https://github.com/bx-blee/env3/blob/main/plus/bcpg%3AaidermacsPlus.el
 and [[file:/bisos/blee/env3/plus/bcpg:aidermacsPlus.el]]
 
 
@@ -69,8 +69,8 @@ We have augmented these with an additional package called AIPlus
 (https://github.com/bx-blee/aiplus). AIPlus includes various menus and
 utilities for integrating aidermacs and gptel in Emacs and Blee.
 
-Installation and configuration of aidermacs is using:\
-https://github.com/bx-blee/env3/blob/main/plus/bnpa%3Aaiplus.el\
+Installation and configuration of aidermacs is using:\\
+https://github.com/bx-blee/env3/blob/main/plus/bnpa%3Aaiplus.el
 and [[file:/bisos/blee/env3/plus/bnpa:aiplus.el]]
 
 In the proprietary American model, the integration of AI into usage
