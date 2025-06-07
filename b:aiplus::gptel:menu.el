@@ -66,11 +66,12 @@ As such what happens below should be exactly what is necessary and no more."
      (b:aiplus:gptel:menuItem:gptel|define)
        (s-- 3))
 
-   (b:aiplus:gptel:canned:menu:plugin|install
-     b:aiplus:gptel:menu (s-- 3))
+    ;;; These have been boved to the global top level app menu, for easier access.
+   ;; (b:aiplus:gptel:canned:menu:plugin|install
+   ;;   b:aiplus:gptel:menu (s-- 3))
 
-   (b:aiplus:gptel:translate:menu:plugin|install
-     b:aiplus:gptel:menu (s-- 3))
+   ;; (b:aiplus:gptel:translate:menu:plugin|install
+   ;;   b:aiplus:gptel:menu (s-- 3))
 
     
     (dolist (item '(;;; b:aiplus:gptel:menuItem:gptel|define
