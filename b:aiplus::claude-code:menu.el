@@ -195,75 +195,75 @@ As such what happens below should be exactly what is necessary and no more."
 (defun b:aiplus:claude-code:menuItem:slash|define ()
   (list "Slash"
         ;; Core
-        ["Help and Documentation  -- /help"
+        ["/help  -- Help and Documentation"
          (claude-code-send-command "/help")
          :help "Send /help slash command"]
-        ["Clear Conversation  -- /clear"
+        ["/clear  -- Clear Conversation"
          (claude-code-send-command "/clear")
          :help "Send /clear slash command"]
-        ["Compact Conversation  -- /compact"
+        ["/compact  -- Compact Conversation"
          (claude-code-send-command "/compact")
          :help "Send /compact slash command"]
-        ["Show Status  -- /status"
+        ["/status  -- Show Status"
          (claude-code-send-command "/status")
          :help "Send /status slash command"]
-        ["Run Diagnostics  -- /doctor"
+        ["/doctor  -- Run Diagnostics"
          (claude-code-send-command "/doctor")
          :help "Send /doctor slash command"]
         "--"
         ;; Config/Setup
-        ["Configuration  -- /config"
+        ["/config  -- Configuration"
          (claude-code-send-command "/config")
          :help "Send /config slash command"]
-        ["Initialize Project  -- /init"
+        ["/init  -- Initialize Project"
          (claude-code-send-command "/init")
          :help "Send /init slash command"]
-        ["Memory Management  -- /memory"
+        ["/memory  -- Memory Management"
          (claude-code-send-command "/memory")
          :help "Send /memory slash command"]
-        ["Add Directory  -- /add-dir"
+        ["/add-dir  -- Add Directory"
          (claude-code-send-command "/add-dir")
          :help "Send /add-dir slash command"]
-        ["Terminal Setup  -- /terminal-setup"
+        ["/terminal-setup  -- Terminal Setup"
          (claude-code-send-command "/terminal-setup")
          :help "Send /terminal-setup slash command"]
         "--"
         ;; Account/Model
-        ["Login  -- /login"
+        ["/login  -- Login"
          (claude-code-send-command "/login")
          :help "Send /login slash command"]
-        ["Logout  -- /logout"
+        ["/logout  -- Logout"
          (claude-code-send-command "/logout")
          :help "Send /logout slash command"]
-        ["Select Model  -- /model"
+        ["/model  -- Select Model"
          (claude-code-send-command "/model")
          :help "Send /model slash command"]
-        ["Manage Permissions  -- /permissions"
+        ["/permissions  -- Manage Permissions"
          (claude-code-send-command "/permissions")
          :help "Send /permissions slash command"]
-        ["Show Cost  -- /cost"
+        ["/cost  -- Show Cost"
          (claude-code-send-command "/cost")
          :help "Send /cost slash command"]
         "--"
         ;; Dev Tools
-        ["Code Review  -- /review"
+        ["/review  -- Code Review"
          (claude-code-send-command "/review")
          :help "Send /review slash command"]
-        ["PR Comments  -- /pr_comments"
+        ["/pr_comments  -- PR Comments"
          (claude-code-send-command "/pr_comments")
          :help "Send /pr_comments slash command"]
-        ["Manage Agents  -- /agents"
+        ["/agents  -- Manage Agents"
          (claude-code-send-command "/agents")
          :help "Send /agents slash command"]
-        ["Vim Mode  -- /vim"
+        ["/vim  -- Vim Mode"
          (claude-code-send-command "/vim")
          :help "Send /vim slash command"]
-        ["MCP Tools  -- /mcp"
+        ["/mcp  -- MCP Tools"
          (claude-code-send-command "/mcp")
          :help "Send /mcp slash command"]
         "--"
         ;; Support
-        ["Report Bug  -- /bug"
+        ["/bug  -- Report Bug"
          (claude-code-send-command "/bug")
          :help "Send /bug slash command"]
         ))
@@ -290,7 +290,7 @@ As such what happens below should be exactly what is necessary and no more."
         "--"
         ["Cycle Claude Modes  -- claude-code-cycle-mode"
          (claude-code-cycle-mode)
-         :help "Cycle through Claude Code modes via Shift-Tab"]
+         :help "Cycle through Claude Code modes via Shift-Tab: Default, Auto-accept edits, Plan"]
         ["Toggle Read-Only Mode  -- claude-code-toggle-read-only-mode"
          (claude-code-toggle-read-only-mode)
          :help "Toggle read-only mode for the Claude Code buffer"]

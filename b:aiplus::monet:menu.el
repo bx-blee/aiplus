@@ -101,7 +101,9 @@ As such what happens below should be exactly what is necessary and no more."
 
 (defun b:aiplus:monet:menuItem:mode|define ()
   (car `(
-         [,(format "Toggle Monet Mode  -- monet-mode")
+         [,(if monet-mode
+               "Disable Monet Mode  -- monet-mode"
+             "Enable Monet Mode  -- monet-mode")
           (monet-mode 'toggle)
           :help "Enable or disable Monet minor mode (MCP websocket integration)"
           ]
