@@ -5,7 +5,8 @@
 (require 'b:aiplus::gptel:menu)
 (require 'b:aiplus::aidermacs:menu)
 (require 'b:aiplus::aidermacs:minor:menu)
-(require 'b:aiplus::claude-ide:menu)
+;; (require 'b:aiplus::claude-ide:menu)
+(require 'b:aiplus::claude-code:menu)
 
 (defgroup b:aiplus:: nil
   "AIPlus Package."
