@@ -7,6 +7,7 @@
 (require 'b:aiplus::aidermacs:minor:menu)
 ;; (require 'b:aiplus::claude-ide:menu)
 (require 'b:aiplus::claude-code:menu)
+(require 'b:aiplus::monet:menu)
 
 (defgroup b:aiplus:: nil
   "AIPlus Package."
