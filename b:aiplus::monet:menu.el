@@ -149,6 +149,9 @@ As such what happens below should be exactly what is necessary and no more."
         ["Disable Logging  -- monet-disable-logging"
          (monet-disable-logging)
          :help "Disable logging of Claude MCP communication"]
+        ["Show Logs  -- display-buffer monet-log-buffer-name"
+         (display-buffer monet-log-buffer-name)
+         :help "Show the Monet Log buffer"]
         ))
 
 (provide 'b:aiplus::monet:menu)
