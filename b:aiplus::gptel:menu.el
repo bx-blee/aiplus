@@ -21,7 +21,7 @@
    <menuDelimiter
    )
 
-  (add-hook 'menu-bar-update-hook 'b:aiplus:gptel:menu|update-hook)
+  ;; Built once: nothing on menu-bar-update-hook (it runs on nearly every redisplay).
   )
 
 (defun b:aiplus:gptel:menu|update-hook ()
